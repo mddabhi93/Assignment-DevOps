@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to Dev
-        run: kubectl apply -f k8s/
+        run: kubectl apply -f eks/
 
   deploy-prod:
     needs: deploy-dev
@@ -36,4 +36,4 @@ jobs:
     environment: production   # Approval required
     steps:
       - name: Deploy to Prod
-        run: kubectl apply -f k8s/
+        run: kubectl apply -f eks/
